@@ -18,6 +18,6 @@ option {
     border-radius: 10px;
 }
 
-option:hover {
-    background-color: none;
+select:hover {
+    background-color: rgb(226, 226, 226);
 }
