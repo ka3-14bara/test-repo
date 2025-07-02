@@ -11,7 +11,7 @@ function StationType({ labelOfSelect, selectName, selectID, optionsObj }) {
 
   return (
     <>
-      <label>{labelOfSelect}</label><br />
+      <label htmlFor={selectID}> {labelOfSelect} </label><br />
       <select name={selectName} id={selectID}>
         {options}
       </select>
