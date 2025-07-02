@@ -1,28 +1,44 @@
 import React from 'react';
 import InputTypeText from './InputTypes/InputTypeText';
 import InputTypeRadioCheckbox from './InputTypes/InputTypeRadioCheckbox';
-import InputTypeSubmit from './InputTypes/InputTypeSubmit';
+import InputTypeSubmit from './InputTypes/InputTypeSubmitReset';
 import InputTypeDate from './InputTypes/InputTypeDate';
 import InputTypeNumber from './InputTypes/InputTypeNumber';
+import InputTypeColor from './InputTypes/InputTypeColor';
+import InputTypeTelephone from './InputTypes/InputTypeTelMail';
 
-function Input({ labelOfInput = "", inputType = "text", inputName, inputID, optionsObj = {} }) {
+function Input({ labelOfInput = "", inputType = "text", inputName, inputID, optionsObj = {}, required = false }) {
     
     let inputElement;
     
     if (inputType === "text") {
         inputElement = (
-            <InputTypeText labelOfInput={labelOfInput} inputType={inputType} inputName={inputName} inputID={inputID} />
+            <InputTypeText labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} />
         );
     } else if (inputType === "radio" || inputType === "checkbox") {
         inputElement = (
             <InputTypeRadioCheckbox inputType={inputType} inputName={inputName} inputID={inputID} optionsObj={optionsObj} />
         );
-    } else if (inputType === "submit") {
-        inputElement = (<InputTypeSubmit inputType={inputType} buttonValue={labelOfInput} />);
+    } else if (inputType === "submit" || inputType === "reset") {
+        inputElement = (
+            <InputTypeSubmit inputType={inputType} buttonValue={labelOfInput} />
+        );
     } else if (inputType === "date") {
-        inputElement = (<InputTypeDate labelOfInput={labelOfInput} inputName={inputName} inputID={inputID}/>)
+        inputElement = (
+            <InputTypeDate labelOfInput={labelOfInput} inputName={inputName} inputID={inputID}/>
+        );
     } else if (inputType === "number") {
-        inputElement = (<InputTypeNumber labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} optionsObj={optionsObj} />)
+        inputElement = (
+            <InputTypeNumber labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} optionsObj={optionsObj} />
+        );
+    } else if (inputType === "color") {
+        inputElement = (
+            <InputTypeColor labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} />
+        );
+    } else if (inputType === "tel" || inputType === "email") {
+        inputElement = (
+            <InputTypeTelephone labelOfInput={labelOfInput} inputType={inputType} inputName={inputName} inputID={inputID} required={required} />
+        );
     }
 
     return <>{inputElement}</>;

@@ -41,6 +41,22 @@ const StationCreationPage = () => {
             <div style={{ padding: "10px", margin: "20px" }}>
                 <Input labelOfInput="Введите число от 1 до 999" inputType="number" inputName="numberBox" inputID="4216854" optionsObj={{"min":"1", "max": "999"}}/> 
             </div>
+
+            <div style={{ padding: "10px", margin: "20px" }}>
+                <Input labelOfInput="Choose the colour" inputType="color" inputName="colorBox" inputID="91834" /> 
+            </div>
+
+            <div style={{ padding: "10px", margin: "20px" }}>
+                <Input labelOfInput="Enter the telephone" inputType="tel" inputName="telBox" inputID="32749" /> 
+            </div>
+
+            <div style={{ padding: "10px", margin: "20px" }}>
+                <Input labelOfInput="Enter the email" inputType="email" inputName="emailBox" inputID="480789" required = {true}/> 
+            </div>
+
+            <div style={{ padding: "10px", margin: "20px" }}>
+                <Input labelOfInput="Сбросить" inputType="reset" />
+            </div>
         </form>
     </div>
   );
