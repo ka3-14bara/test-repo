@@ -19,7 +19,7 @@ const StationCreationPage = () => {
             </div>
 
             <div style={{ padding: "10px" }}>
-                <Input labelOfInput="Введите ФИО" inputType="text" inputName="FIO" inputID="2736" />
+                <Input labelOfInput="Введите ФИО" inputType="text" inputName="FIO" inputID="2736" required={true} placeholder='My holder' />
             </div>
 
             <div style={{ padding: "10px", margin: "20px" }}>
@@ -60,6 +60,14 @@ const StationCreationPage = () => {
 
             <div style={{ padding: "10px", margin: "20px" }}>
                 <Input labelOfInput="Выберите месяц" inputType="month" inputName="monthBox" inputID="8340" />
+            </div>
+
+            <div style={{ padding: "10px", margin: "20px" }}>
+                <Input labelOfInput="Выберите file" inputType="file" inputName="fileBox" inputID="2348" multiple={true} />
+            </div>
+
+            <div style={{ padding: "10px", margin: "20px" }}>
+                <Input labelOfInput="Выберите time" inputType="time" inputName="timeBox" inputID="2344" />
             </div>
         </form>
     </div>

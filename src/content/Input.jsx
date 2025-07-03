@@ -14,27 +14,27 @@ function Input({ labelOfInput = "", inputType = "text", inputName, inputID, opti
     
     if (inputType === "text") {
         inputElement = (
-            <InputTypeText labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} placeholder={placeholder}/>
+            <InputTypeText labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} placeholder={placeholder} required={required} />
         );
     } else if (inputType === "radio" || inputType === "checkbox") {
         inputElement = (
-            <InputTypeRadioCheckbox inputType={inputType} inputName={inputName} inputID={inputID} optionsObj={optionsObj} />
+            <InputTypeRadioCheckbox inputType={inputType} inputName={inputName} inputID={inputID} optionsObj={optionsObj} required={required}/>
         );
     } else if (inputType === "submit" || inputType === "reset") {
         inputElement = (
-            <InputTypeSubmit inputType={inputType} buttonValue={labelOfInput} />
+            <InputTypeSubmit inputType={inputType} buttonValue={labelOfInput} required={required} />
         );
-    } else if (inputType === "date" || inputType === "month") {
+    } else if (inputType === "date" || inputType === "month" || inputType === "time") {
         inputElement = (
-            <InputTypeDate type={inputType} labelOfInput={labelOfInput} inputName={inputName} inputID={inputID}/>
+            <InputTypeDate type={inputType} labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} required={required} />
         );
     } else if (inputType === "number") {
         inputElement = (
-            <InputTypeNumber labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} optionsObj={optionsObj} />
+            <InputTypeNumber labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} optionsObj={optionsObj} required={required} />
         );
     } else if (inputType === "color") {
         inputElement = (
-            <InputTypeColor labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} />
+            <InputTypeColor labelOfInput={labelOfInput} inputName={inputName} inputID={inputID} required={required} />
         );
     } else if (inputType === "tel" || inputType === "email") {
         inputElement = (
@@ -42,7 +42,7 @@ function Input({ labelOfInput = "", inputType = "text", inputName, inputID, opti
         );
     } else if (inputType === "file") {
         inputElement = (
-            <InputTypeFile label = {labelOfInput} inputID = {inputID} inputName={inputName} multiple={multiple} />
+            <InputTypeFile label = {labelOfInput} inputID = {inputID} inputName={inputName} multiple={multiple} required={required} />
         );
     }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputTypeRadioCheckbox = ({ inputType, inputName, inputID, optionsObj = {} }) => {
+const InputTypeRadioCheckbox = ({ inputType, inputName, inputID, optionsObj = {}, required }) => {
 
     const inputObjKeys = Object.keys(optionsObj);
     const blockElement = inputObjKeys.map(key => (
@@ -10,6 +10,7 @@ const InputTypeRadioCheckbox = ({ inputType, inputName, inputID, optionsObj = {}
                       id={key+inputID} 
                       name={inputName} 
                       value={optionsObj[key]} 
+                      required={required === true}
                   />
                   <label htmlFor={key+inputID}>{optionsObj[key]}</label><br/>
               </React.Fragment>
