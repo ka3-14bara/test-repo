@@ -1,11 +1,11 @@
 import React from 'react'
 
-const InputTypeDate = ({ labelOfInput, inputName, inputID }) => {
+const InputTypeDate = ({ type, labelOfInput, inputName, inputID }) => {
   return (
-    <>
+    <div>
         <label htmlFor={inputID}> {labelOfInput} </label>
-        <input type="date" id={inputID} name={inputName} />
-    </>
+        <input type={type} id={inputID} name={inputName} />
+    </div>
   )
 }
 

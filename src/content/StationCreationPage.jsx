@@ -57,6 +57,10 @@ const StationCreationPage = () => {
             <div style={{ padding: "10px", margin: "20px" }}>
                 <Input labelOfInput="Сбросить" inputType="reset" />
             </div>
+
+            <div style={{ padding: "10px", margin: "20px" }}>
+                <Input labelOfInput="Выберите месяц" inputType="month" inputName="monthBox" inputID="8340" />
+            </div>
         </form>
     </div>
   );
